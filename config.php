@@ -21,12 +21,10 @@ function config(string $optionName = null, $defaultValue = null)
 			$optionNameArr = explode(".", $optionName);
 			$arr = $setting;
 			foreach ($optionNameArr as $el) {
-				if (array_key_exists($el, $arr))
-				{
+				if (array_key_exists($el, $arr)) {
 					$arr = $arr["$el"];
 				}
-				else if (isset($defaultValue))
-				{
+				else if (isset($defaultValue)) {
 					return $defaultValue;
 				}
 				else throwNewException();
